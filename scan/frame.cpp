@@ -17,8 +17,8 @@
 // TODO: Try harder to find good hseg criteria, consider y_offset criteria (what range is reasonable?, consider non-sum-based score criteria
 // TODO: Upside down card detection? (Use y_offset as a heuristic?)
 
-#define kMinVSegScore 15  // non-lax value: 18?
-#define kMaxNumberScoreDelta 3 // non-lax value: 1? 2?
+#define kMinVSegScore 6  // non-lax value: 18?
+#define kMaxNumberScoreDelta 5 // non-lax value: 1? 2?
 #define kFlipVSegYOffsetCutoff ((kCreditCardTargetHeight - kNumberHeight) / 2)
 
 DMZ_INTERNAL void scan_card_image(IplImage *y, bool collect_card_number, bool scan_expiry, FrameScanResult *result) {

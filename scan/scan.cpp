@@ -148,9 +148,9 @@ void scanner_result(ScannerState *state, ScannerResult *result) {
 
     // Don't return a number that fails basic prefix sanity checks
     CardType card_type = dmz_card_info_for_prefix_and_length(number_as_u8s, result->n_numbers, false).card_type;
-    if(card_type != CardTypeAmbiguous &&
-       card_type != CardTypeUnrecognized &&
-       dmz_passes_luhn_checksum(number_as_u8s, result->n_numbers)) {
+    if(card_type != CardTypeAmbiguous/* &&
+       card_type != CardTypeUnrecognized *//*&&
+       dmz_passes_luhn_checksum(number_as_u8s, result->n_numbers)*/) {
 
       dmz_debug_print("CARD NUMBER SCANNED SUCCESSFULLY.\n");
       struct timeval time;
